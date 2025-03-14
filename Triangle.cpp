@@ -134,7 +134,7 @@ void print_menu() {
             int numPoints;
 
             while (true) {
-                cout << "Скільки точок ви хочете додати?\u00A0";
+                cout << "\nСкільки точок ви хочете додати?\u00A0";
                 cin >> numPoints;
 
                 if (check_to_fail()) {
@@ -190,16 +190,17 @@ void print_menu() {
                             << (triangle.contains(point) ? "всередині трикутника" : "зовні трикутника") << endl;
                 }
             }
+            cout << endl;
         } else if (choice == "4") {
             if (triangle.is_zero_area()) {
-                cout << "Трикутник є виродженим!" << endl;
+                cout << "\nТрикутник є виродженим!" << endl;
             } else {
-                cout << "Площа трикутника: " << triangle.area() << endl;
+                cout << "\nПлоща трикутника: " << triangle.area() << endl;
             }
         } else if (choice == "5") {
             running = false;
         } else {
-            cout << "Невірний вибір. Спробуйте ще раз.\n";
+            cout << "\nНевірний вибір. Спробуйте ще раз.\n";
         }
     }
 }
