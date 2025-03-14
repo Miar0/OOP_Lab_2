@@ -73,6 +73,27 @@ void print_menu() {
     Triangle triangle;
     bool running = true;
 
+    while (true) {
+        cout << "\nВведіть координати трикутника (x1 y1 x2 y2 x3 y3):\u00A0";
+        cin >> triangle.a.x >> triangle.a.y >> triangle.b.x >> triangle.b.y >> triangle.c.x >> triangle.c.y;
+
+        if (check_to_fail()) {
+            continue;
+        }
+
+        if ((triangle.a.x == triangle.b.x && triangle.a.y == triangle.b.y) ||
+            (triangle.a.x == triangle.c.x && triangle.a.y == triangle.c.y) ||
+            (triangle.b.x == triangle.c.x && triangle.b.y == triangle.c.y)) {
+            cout << "Помилка! Дві або більше точки співпадають. Введіть координати це раз.";
+            continue;
+            }
+
+        break;
+    }
+
+    clear_buffer();
+    cout << "Координати трикутника введено успішно!\n" << endl;
+
     while (running) {
         vector<Point> points;
         string choice;
